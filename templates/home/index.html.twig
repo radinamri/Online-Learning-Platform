@@ -10,17 +10,4 @@
     .course-link a { padding: 10px 15px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; }
     .course-link a:hover { background-color: #0056b3; }
 </style>
-
-<div class="example-wrapper">
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
-    <div class="course-link">
-        <h2>Explore Our Courses</h2>
-        <a href="{{ path('app_courses') }}">Go to Courses</a>
-    </div>
-</div>
 {% endblock %}
