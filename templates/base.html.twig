@@ -79,12 +79,16 @@
     <header>
         <h1>{% block header_title %}Online Learning Platform{% endblock %}</h1>
         <nav>
+            {% if app.user %}
             <a href="{{ path('app_home') }}">Home</a>
             <a href="{{ path('app_course') }}">Courses</a>
+            {% endif %}
             {% if app.user and not is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('app_enrollment') }}">My Enrollments</a>
             {% endif %}
+            {% if app.user %}
             <a href="{{ path('app_logout') }}" class="btn btn-danger btn-sm">Logout</a>
+            {% endif %}
         </nav>
     </header>
 
